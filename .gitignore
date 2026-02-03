@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.DS_Store
+# Opcional: si el CSV és molt gran i no el vols a Git
+# temps.csv
