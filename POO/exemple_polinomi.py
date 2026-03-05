@@ -7,7 +7,7 @@ class polinomi:
         self.coefs = coefs
         self.grau = len(self.coefs)-1
         
-    def grau(self):
+    def mostra_grau(self):
         return self.grau
     
     def mostra_coef(self):
