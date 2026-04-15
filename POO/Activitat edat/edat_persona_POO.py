@@ -3,8 +3,14 @@ from modul import persona
 
 a = persona("Jordi")
 
-a.data(31,5,1976)
+b = persona("Ivet")
 
-a.mostra_data()
-a.mostra_edat()
+c= persona("Raul")
+
+b.data(29,8,2009)
+
+c.data(8,3,2009)
+
+c.mostra_data()
+c.mostra_edat()
         

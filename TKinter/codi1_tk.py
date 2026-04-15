@@ -25,7 +25,7 @@ def obrir_finestra_secundaria():
 # --- Configuració de la finestra principal ---
 root = tk.Tk()
 root.title("El meu Bloc de Notes")
-root.geometry("400x400")
+root.geometry("400x400+350+150")
 
 # 1. Etiqueta (Label)
 titol = tk.Label(root, text="Escriu les teves idees:", font=("Arial", 14))

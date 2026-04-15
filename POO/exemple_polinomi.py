@@ -55,11 +55,11 @@ q = polinomi(c2)
 r = p+q
 r.mostra_coef()
 
-print(r.grau)
-print(p.grau)
-print(q.grau)
+print(r.mostra_grau())
+print(p.mostra_grau())
+print(q.mostra_grau())
 
-print(r.avalua(0))
+print(p.avalua(34))
 
 r.dibuixa_polinomi(-5,5)
 q.dibuixa_polinomi(-2,2)
