@@ -206,10 +206,9 @@ class AnalitzadorMetabolicFIT:
                         rer = 0.75 + ratio * (0.85 - 0.75)
                     elif fc_actual <= self.lt2:
                         ratio = (fc_actual - lt1) / (self.lt2 - lt1)
-                        rer = 0.85 + ratio * (0.98 - 0.85)
+                        rer = 0.85 + ratio * (1 - 0.85)
                     else:
-                        ratio = (fc_actual - self.lt2) / (self.fc_max - self.lt2) if self.fc_max > self.lt2 else 1.0
-                        rer = 0.98 + ratio * (1.02 - 0.98)
+                        rer = 1
                     
                     # Equacions de laboratori de Jeukendrup & Wallis
                     cho_g_min = 4.210 * vo2_l_min * rer - 2.962 * vo2_l_min
