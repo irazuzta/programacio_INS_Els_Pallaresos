@@ -1,0 +1,296 @@
+[
+    {
+        "data": "2026-04-25",
+        "trimp": 0,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-04-26",
+        "trimp": 86,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-04-27",
+        "trimp": 76,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-04-28",
+        "trimp": 50,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-04-29",
+        "trimp": 0,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-04-30",
+        "trimp": 73,
+        "es_test": true,
+        "vel_mitjana": 11.620000000000001,
+        "pols_mitja": 140
+    },
+    {
+        "data": "2026-05-01",
+        "trimp": 71,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-02",
+        "trimp": 83,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-03",
+        "trimp": 0,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-04",
+        "trimp": 45,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-05",
+        "trimp": 88,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-06",
+        "trimp": 98,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-07",
+        "trimp": 0,
+        "es_test": true,
+        "vel_mitjana": 11.52,
+        "pols_mitja": 154
+    },
+    {
+        "data": "2026-05-08",
+        "trimp": 71,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-09",
+        "trimp": 73,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-10",
+        "trimp": 72,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-11",
+        "trimp": 0,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-12",
+        "trimp": 43,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-13",
+        "trimp": 60,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-14",
+        "trimp": 79,
+        "es_test": true,
+        "vel_mitjana": 10.56,
+        "pols_mitja": 147
+    },
+    {
+        "data": "2026-05-15",
+        "trimp": 0,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-16",
+        "trimp": 56,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-17",
+        "trimp": 38,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-18",
+        "trimp": 36,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-19",
+        "trimp": 0,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-20",
+        "trimp": 83,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-21",
+        "trimp": 75,
+        "es_test": true,
+        "vel_mitjana": 12.569999999999999,
+        "pols_mitja": 146
+    },
+    {
+        "data": "2026-05-22",
+        "trimp": 72,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-23",
+        "trimp": 0,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-24",
+        "trimp": 88,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-25",
+        "trimp": 86,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-26",
+        "trimp": 53,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-27",
+        "trimp": 0,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-28",
+        "trimp": 80,
+        "es_test": true,
+        "vel_mitjana": 11.44,
+        "pols_mitja": 156
+    },
+    {
+        "data": "2026-05-29",
+        "trimp": 66,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-30",
+        "trimp": 87,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-05-31",
+        "trimp": 0,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-06-01",
+        "trimp": 69,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-06-02",
+        "trimp": 72,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-06-03",
+        "trimp": 86,
+        "es_test": false,
+        "vel_mitjana": null,
+        "pols_mitja": null
+    },
+    {
+        "data": "2026-06-07",
+        "trimp": 125.0,
+        "es_test": true,
+        "vel_mitjana": 12.0,
+        "pols_mitja": 124.0
+    },
+    {
+        "data": "2026-08-04",
+        "trimp": 100.0,
+        "es_test": true,
+        "vel_mitjana": 15.0,
+        "pols_mitja": 140.0
+    }
+]
