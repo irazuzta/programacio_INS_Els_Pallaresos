@@ -171,6 +171,7 @@ class AnalitzadorMetabolicFIT:
             fitfile = FitFile(ruta_fit)
             
             temps_segons = []
+            fc_timeline_bpm = []
             cho_timeline_g_min = []
             fat_timeline_g_min = []
             cho_acumulat_integral = []
@@ -188,6 +189,7 @@ class AnalitzadorMetabolicFIT:
                 
                 if 'heart_rate' in valors:
                     fc_actual = float(valors['heart_rate'])
+                    fc_timeline_bpm.append(fc_actual)
                     comptador_temps += 1 
                     
                     # Càlcul del %HRR (Intensitat segons Karvonen)
@@ -249,27 +251,47 @@ class AnalitzadorMetabolicFIT:
                 self.lbl_kcal_dif.config(text=f"Diferència: {diferencia_kcal:.0f} kcal (App < Garmin)", foreground="green")
             
             # 4. RENDERITZACIÓ DE LES GRÀFIQUES
-            self.dibuixar_grafiques_metaboliques(temps_segons, cho_timeline_g_min, fat_timeline_g_min, cho_acumulat_integral, fat_acumulat_integral, kcal_app_total)
-
+            self.dibuixar_grafiques_metaboliques(temps_segons, cho_timeline_g_min, fat_timeline_g_min, cho_acumulat_integral, fat_acumulat_integral, kcal_app_total, fc_timeline_bpm)
         except Exception as e:
             messagebox.showerror("Error de processament", f"No s'ha pogut analitzar l'arxiu .FIT:\n{str(e)}")
 
-    def dibuixar_grafiques_metaboliques(self, temps, cho_linia, fat_linia, cho_integral, fat_integral, kcal_app):
-        """Genera els subgràfics integrats a Tkinter comparant les dades energètiques."""
+    def dibuixar_grafiques_metaboliques(self, temps, cho_linia, fat_linia, cho_integral, fat_integral, kcal_app, fc_linia):
+        """Genera els subgràfics integrats a Tkinter comparant dades i afegint zones metabòliques de fons."""
         for widget in self.frame_grafic.winfo_children():
             widget.destroy()
 
         fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(8, 6), sharex=True, dpi=100)
         
-        # Subplot 1: Taxes d'oxidació instantànies
-        ax1.plot(temps, cho_linia, color='blue', linewidth=1.5, label="Carbohidrats (CHO)")
-        ax1.plot(temps, fat_linia, color='green', linewidth=1.5, label="Greixos (FAT)")
+        # --- SUBPLOT 1: TAXES D'OXIDACIÓ INSTANTÀNIES + FRANGES METABÒLIQUES ---
+        # 1.1. Dibuixem les línies de consum de substrat (Eix Y esquerre)
+        linia_cho = ax1.plot(temps, cho_linia, color='blue', linewidth=1.75, label="Carbohidrats (CHO)", zorder=3)
+        linia_fat = ax1.plot(temps, fat_linia, color='green', linewidth=1.75, label="Greixos (FAT)", zorder=3)
         ax1.set_ylabel("Taxa de Consum (g/min)", fontsize=9)
-        ax1.title.set_text(f"Anàlisi Temporal: App ({kcal_app:.0f} kcal) vs Garmin ({self.garmin_calories:.0f} kcal)")
-        ax1.grid(True, linestyle=':', alpha=0.6)
-        ax1.legend(loc="upper right", fontsize=8)
+        ax1.grid(True, linestyle=':', alpha=0.4, zorder=0)
         
-        # Subplot 2: La integral acumulada en grams totals
+        # 1.2. Creem un segon eix Y a la dreta per superposar la Freqüència Cardíaca real
+        ax1_pols = ax1.twinx()
+        linia_fc = ax1_pols.plot(temps, fc_linia, color='red', linewidth=0.5, linestyle='-', alpha=0.7, label="Pols (bpm)", zorder=2)
+        ax1_pols.set_ylabel("Freqüència Cardíaca (bpm)", fontsize=9, color='#444444')
+        ax1_pols.tick_params(axis='y', labelcolor='#444444')
+        
+        # Ajustem els límits de l'eix del pols per quadrar les franges de fons
+        ax1_pols.set_ylim(self.fc_repos - 5, self.fc_max + 5)
+        
+        # 1.3. Dibuixem les franges de color de fons (Zones metabòliques)
+        lt1 = 0.80 * self.lt2
+        ax1_pols.axhspan(self.fc_repos - 5, lt1, color='#2ECC71', alpha=0.15, label="Z1-Z2: Baix LT1 (<Aeròbic)")
+        ax1_pols.axhspan(lt1, self.lt2, color='#F1C40F', alpha=0.15, label="Z3-Z4: Transició (LT1-LT2)")
+        ax1_pols.axhspan(self.lt2, self.fc_max + 5, color='#E74C3C', alpha=0.15, label="Z5: Alt LT2 (>Anaeròbic)")
+        
+        # Unifiquem les llegendes de l'eix de grams i de l'eix de pols/zones en una sola
+        lines = linia_cho + linia_fat + linia_fc
+        labels = [l.get_label() for l in lines]
+        ax1.legend(lines, labels, loc="upper right", fontsize=8, framealpha=0.9)
+        
+        ax1.title.set_text(f"Anàlisi Temporal: App ({kcal_app:.0f} kcal) vs Garmin ({self.garmin_calories:.0f} kcal)")
+        
+        # --- SUBPLOT 2: LA INTEGRAL ACUMULADA EN GRAMS TOTALS ---
         ax2.plot(temps, cho_integral, color='darkblue', linewidth=2, linestyle='--', label=f"CHO Totals ({cho_integral[-1]:.1f}g)")
         ax2.plot(temps, fat_integral, color='darkgreen', linewidth=2, linestyle='--', label=f"Greixos Totals ({fat_integral[-1]:.1f}g)")
         ax2.set_xlabel("Temps d'Entrenament (Minuts)", fontsize=9)
@@ -284,6 +306,7 @@ class AnalitzadorMetabolicFIT:
         canvas.draw()
         canvas.get_tk_widget().pack(fill=tk.BOTH, expand=True)
         plt.close(fig)
+    
 
 if __name__ == "__main__":
     root = tk.Tk()
